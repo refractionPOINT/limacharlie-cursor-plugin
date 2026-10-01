@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       check-live-server:
-        description: "Also check the hosted MCP catalogs (tools/list only)"
+        description: "Also check the hosted MCP catalog (tools/list only)"
         type: boolean
         default: false
 
@@ -31,6 +31,6 @@ jobs:
         run: python3 scripts/check_mcp_tools.py --offline
       - name: Check validation regressions
         run: python3 -m unittest discover -s scripts -p 'test_*.py'
-      - name: Validate hosted catalogs and argument contracts
+      - name: Validate hosted tool discovery
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.check-live-server }}
         run: python3 scripts/check_mcp_tools.py
