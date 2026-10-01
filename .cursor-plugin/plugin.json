@@ -17,11 +17,11 @@
     "secops",
     "edr",
     "siem",
-    "threat-hunting",
-    "detection-engineering",
-    "incident-response",
-    "lcql",
-    "mcp"
+    "cnapp",
+    "email",
+    "vulnerability",
+    "endpoint",
+    "incident"
   ],
   "category": "integrations",
   "tags": [
