@@ -1,8 +1,8 @@
 {
   "name": "limacharlie",
   "displayName": "LimaCharlie",
-  "version": "1.0.0",
-  "description": "Hunt threats, triage detections and cases, build and test detection rules, and investigate or contain endpoints in LimaCharlie. Full LimaCharlie capabilities, with investigation-first workflows and approval guidance for changes.",
+  "version": "1.0.1",
+  "description": "Connect Cursor and Grok Bot to LimaCharlie through the hosted MCP server with OAuth and the full tool set.",
   "author": {
     "name": "LimaCharlie",
     "email": "support@limacharlie.io"
@@ -30,6 +30,5 @@
     "secops",
     "mcp"
   ],
-  "mcpServers": "./mcp.json",
-  "skills": "./skills/"
+  "mcpServers": "./mcp.json"
 }
