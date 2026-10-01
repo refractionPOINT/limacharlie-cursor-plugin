@@ -1,0 +1,36 @@
+name: Validate LimaCharlie plugin
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      check-live-server:
+        description: "Also check the hosted MCP catalogs (tools/list only)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install manifest validator
+        run: python3 -m pip install -r scripts/requirements-dev.txt
+      - name: Validate manifest schema
+        run: python3 scripts/validate_manifest.py
+      - name: Validate local plugin files
+        run: python3 scripts/check_mcp_tools.py --offline
+      - name: Check validation regressions
+        run: python3 -m unittest discover -s scripts -p 'test_*.py'
+      - name: Validate hosted catalogs and argument contracts
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.check-live-server }}
+        run: python3 scripts/check_mcp_tools.py

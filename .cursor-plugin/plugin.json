@@ -1,0 +1,35 @@
+{
+  "name": "limacharlie",
+  "displayName": "LimaCharlie",
+  "version": "1.0.0",
+  "description": "Hunt threats, triage detections and cases, build and test detection rules, and investigate or contain endpoints in LimaCharlie. Full LimaCharlie capabilities, with investigation-first workflows and approval guidance for changes.",
+  "author": {
+    "name": "LimaCharlie",
+    "email": "support@limacharlie.io"
+  },
+  "homepage": "https://docs.limacharlie.io/6-developer-guide/mcp-server/",
+  "repository": "https://github.com/refractionPOINT/limacharlie-cursor-plugin",
+  "license": "MIT",
+  "logo": "assets/logo.svg",
+  "keywords": [
+    "limacharlie",
+    "security",
+    "secops",
+    "edr",
+    "siem",
+    "threat-hunting",
+    "detection-engineering",
+    "incident-response",
+    "lcql",
+    "mcp"
+  ],
+  "category": "integrations",
+  "tags": [
+    "security",
+    "edr",
+    "secops",
+    "mcp"
+  ],
+  "mcpServers": "./mcp.json",
+  "skills": "./skills/"
+}
